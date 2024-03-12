@@ -1,61 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
-
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  background: url(https://github.com/Kalvium-Program/rock-paper-scissors-boilerplate/blob/main/assets/bg.png?raw=true) fixed;
-}
-
-.score {
-    display: flex;
-    justify-content: center;
-    font-size: 100px;
+    background-image: url("https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/bg.png?raw=true");
+    font-family: Poppins, sans-serif; 
+    text-align: center;
     color: white;
-    font-weight: bolder;
-    padding-top: 40px;
 }
- 
 .container{
     display: flex;
     justify-content: space-around;
+    margin: 0 100px;
 }
-
-.box {
-    border: 3px solid #f7ba3e;
-    width: 485px;
-    height: 430px;
+h1{
+    text-align: center;
+    flex-direction: column;
+    font-size: 70px;
+    margin: 10px 0;
 }
-
-.options {
+.box{
+    height: 420px;
+    width: 400px;
+    border: 3px solid gold;
+    margin: 0 20px; 
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+h2{
+    text-align: center;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.sign img{
+    height: 80px;
+}
+.sign:hover{
+   cursor: pointer;
+}
+.sign{
     display: flex;
     justify-content: space-around;
-    visibility: visible;
-}
-
-.user-box{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-}
-
-.replay {
-    visibility: hidden;
-    padding-top: 50px;
-    color: white;
-    font-size: xx-large;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.play-again {
-    background-color: #f7ba3e;
-    border-radius: 5px;
     padding: 10px;
+}
+#versusimg{
+    height: 500px;
+    margin: 20px 20px; 
+}
+button{
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    background-color:rgb(194, 143, 48);
+    border: 2px solid black;
+    width: 150px;
+    padding: 10px;
+    margin:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: none;
+}
+button:hover{
     cursor: pointer;
-  }
+}
