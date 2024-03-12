@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="game.css"/>
+    <title>Rock-Paper-Scissor</title>
+    <link rel="stylesheet" href="game.css">
 </head>
 <body>
-    <div class="score">
-        <span class="user-score">0</span> - <span class="pc-score">0</span>
-    </div>
+    <h1><span id="yourScore">0</span>-<span id="comScore">0</span></h1>
     <div class="container">
-        <div class="box user user-box">
-            <img id="user-hand" src="" />
-            <div class="options">
-                <img src="https://github.com/Kalvium-Program/rock-paper-scissors-boilerplate/blob/main/assets/paper-logo.png?raw=true" alt="paper"/>
-                <img src="https://github.com/Kalvium-Program/rock-paper-scissors-boilerplate/blob/main/assets/scissors-logo.png?raw=true" alt="scissors"/>
-                <img src="https://github.com/Kalvium-Program/rock-paper-scissors-boilerplate/blob/main/assets/rock-logo.png?raw=true" alt="rock"/>
+        <div class="box">
+            <h2>You</h2>
+                <img src="" id="you-img">
+            <div class="sign">
+                <img onclick="rockfunction()" src="https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/rock-logo.png?raw=true" alt="">
+                <img onclick="paperfunction()" src="https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/paper-logo.png?raw=true" alt="">
+                <img onclick="scissorsfunction()" src="https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/scissors-logo.png?raw=true" alt="">
             </div>
         </div>
-        <img src="https://github.com/Kalvium-Program/rock-paper-scissors-boilerplate/blob/main/assets/vs.png?raw=true"/>
-        <div class="box pc">
-            <img id="pc-hand" />
+        <img src="https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/vs.png?raw=true" alt="" id="versusimg">
+        <div class="boxes" id="compbox">
+            <h2>Com</h2>
+            <img src="" alt="" id="com-img">
         </div>
     </div>
-    <div class="replay">
-        
-    </div>    
-    <script src="game.js"></script>
+    <h2 id="Win-msg"></h2>
+    <button id="play-again">PLAY AGAIN</button>
+<script src="game.js">
+</script>
 </body>
 </html>
