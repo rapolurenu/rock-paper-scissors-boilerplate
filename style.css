@@ -1,43 +1,46 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
-
 *{
-    font-family: 'Poppins' , sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Poppins, sans-serif;
 }
-
-body{
-    background: url(https://github.com/Kalvium-Program/rock-paper-scissors-boilerplate/blob/main/assets/bg.png?raw=true) fixed;
-}
-
-h1{
-    color: rgb(90, 37, 192);
-    padding-top: 40px;
+body {
+    background-image: url("https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/bg.png?raw=true");
+    background-repeat: no-repeat;
+    font-family: Poppins, sans-serif;
     text-align: center;
-    font-size: 75px;
 }
-
-img[alt="logo"] {
-    padding-top: 10px;
-    padding-left: 250px;
-    height: 450px;
-    width: 450px;
+h1{
+    font-weight: 900;
+    font-size: 60px;
+    color: rgb(90, 37, 192);
 }
-
-.play-button{
-    color: white;
-    display: flex;
+#Game-Image {
+    width: 110px;
+    margin-left: 80px;
     align-items: center;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    position: absolute;
-    right: 480px;
-    bottom: 170px;
+    height: auto;
+    margin-right: 50px;
 }
-
-.play-button img{
-    height: 85px;
-    width: 85px;
-    padding: 15px;
+#Play {
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+    margin-bottom: 55px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 20px;
+}
+#button {
+    width: 35px;
+    margin-right: 15px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+#Text {
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    margin-right: 100px;
+    display: inline-block;
+    vertical-align: middle;
 }
