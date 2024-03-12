@@ -1,62 +1,86 @@
-const userImg = document.getElementById("user-hand");
-const pcImg = document.getElementById("pc-hand");
-const options = document.querySelector(".options");
-const user_score = document.querySelector(".user-score");
-const pc_score = document.querySelector(".pc-score");
-const replay = document.querySelector(".replay");
-const pc_options = ["rock", "paper", "scissors"];
+let comImg = document.getElementById("com-img");
+let youImg = document.getElementById("you-img");
+let yourScore = document.getElementById("yourScore");
+let comScore = document.getElementById("comScore");
+let winMsg = document.getElementById("Win-msg");
+let playAgain=document.getElementById("play-again")
 
-let userScore = 0;
-let pcScore = 0;
-let content='';
 
-document.querySelectorAll(".options  img").forEach((op) => {
-  op.addEventListener("click", () => mainFunc(op.alt));
-});
-
-function mainFunc(op) {
-  userImg.src = `assets/${op}-hand.png`;
-  const pcHand = pc_options[Math.floor(Math.random() * 3)];
-  pcHandGen(pcHand);
-  compare(op, pcHand);
+function checkWinner(ourScore, sysScore){
+    if(ourScore === 5){
+        winMsg.textContent = "You won the game !";
+        playAgain.style.display = "block";
+    }else if(sysScore === 5){
+        winMsg.textContent = "computer won the game !";
+        playAgain.style.display = "block";
+    }else if(ourScore === comScore === 5){
+        winMsg.textContent = "Tie";
+        playAgain.style.display = "block";
+    }
 }
 
-function pcHandGen(hand) {
-  pcImg.src = `assets/${hand}-hand.png`;
+playAgain.onclick=()=>{
+    location.reload();
 }
 
-function compare(userHand, pcHand) {
-  if (
-    (userHand === "rock" && pcHand === "scissors") ||
-    (userHand === "paper" && pcHand === "rock") ||
-    (userHand === "scissors" && pcHand === "paper")
-  ) {
-    user_score.textContent = ++userScore;
-  } else if (userHand !== pcHand) {
-    pc_score.textContent = ++pcScore;
-  }
-  check(user_score.textContent, pc_score.textContent);
+let ourScore = 0;
+let sysScore = 0;
+function showScores(randomNumber, uniqueNumber){
+    if(randomNumber ===1 && uniqueNumber ===2){
+        ourScore += 1;
+        yourScore.textContent = ourScore;
+    }else if(randomNumber === 1 && uniqueNumber === 3){
+        sysScore += 1;
+        comScore.textContent = sysScore;
+    }else if(randomNumber ===2 && uniqueNumber ===1){
+        sysScore += 1;
+        comScore.textContent = sysScore;
+    }else if(randomNumber === 2 && uniqueNumber === 3){
+        ourScore += 1;
+        yourScore.textContent = ourScore;
+    }else if(randomNumber ===3 && uniqueNumber ===1){
+        ourScore += 1;
+        yourScore.textContent = ourScore;
+    }else if(randomNumber === 3 && uniqueNumber === 2){
+        sysScore += 1;
+        comScore.textContent = sysScore;
+    }
+    checkWinner(ourScore, sysScore);
 }
 
-function check(user, pc) {
-  if (user === "5" && user>pc ) {
-    options.style.visibility = "hidden";
-    content=`<h3> You Won ! </h3>
-    <div class='play-again'>Play Again</div>`
-    replay.innerHTML+=content;
-    replay.style.visibility = "visible";
-    document.querySelector(".play-again").addEventListener('click',() => {
-      window.location.reload();
-    })
-  }
-  else if ( pc=== '5' && pc>user){
-    options.style.visibility = "hidden";
-    content=`<h3> You Lost :( </h3>
-    <div class='play-again'>Play Again</div>`
-    replay.innerHTML+=content;
-    replay.style.visibility = "visible";
-    document.querySelector(".play-again").addEventListener('click',() => {
-      window.location.reload();
-    })
-  }
+function displayComImg(uniqueNumber){
+    randomNumber = Math.ceil(Math.random()*3);
+    if(randomNumber === 2){
+        comImg.src = "https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/rock-hand.png?raw=true";
+        comImg.classList.add("size");
+    }else if(randomNumber == 3){
+        comImg.src = "https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/paper-hand.png?raw=true";
+        comImg.classList.add("size");
+    }else if(randomNumber == 1){
+        comImg.src = "https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/scissors-hand.png?raw=true";
+        comImg.classList.add("size");
+    }
+    showScores(randomNumber, uniqueNumber);
+}
+
+
+function rockfunction(){
+    let uniqueNumber = 1;
+    youImg.src = "https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/rock-hand.png?raw=true";
+    youImg.classList.add("size");
+    displayComImg(uniqueNumber);
+}
+
+function paperfunction(){
+    let uniqueNumber = 2;
+    youImg.src = "https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/paper-hand.png?raw=true";
+    youImg.classList.add("size");
+    displayComImg(uniqueNumber);
+}
+
+function scissorsfunction(){
+    let uniqueNumber = 3;
+    youImg.src = "https://github.com/rapolurenu/rock-paper-scissors-boilerplate/blob/main/assets/scissors-hand.png?raw=true";
+    youImg.classList.add("size");
+    displayComImg(uniqueNumber);
 }
